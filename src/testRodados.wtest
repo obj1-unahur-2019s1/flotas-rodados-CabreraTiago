@@ -1,0 +1,21 @@
+import Motor.*
+import Rodado.*
+import Interior.*
+
+test "trafic" {
+	
+	var interiorComodo = new Interior()
+	var motorPulenta = new Motor()
+	interiorComodo.capacidad(5)
+	interiorComodo.peso(700)
+	motorPulenta.peso(800)
+	motorPulenta.velocidadMaxima(130)
+	
+	trafic.interior(interiorComodo)
+	trafic.motor(motorPulenta)
+	
+	assert.equals(5, trafic.capacidad())
+	assert.equals(130, trafic.velocidadMaxima())
+	assert.equals(5500, trafic.peso())
+	
+}
