@@ -9,20 +9,20 @@ class Pedido {
 		return distancia / tiempoMaximo
 	}
 
-	method primeraCondicion(rodado) {
+	method cumpleVelocidadMaxima(rodado) {
 		return (rodado.velocidadMaxima() - self.velocidadRequerida()) > 10
 	}
 
-	method segundaCondicion(rodado) {
+	method tieneCapacidadSuficiente(rodado) {
 		return rodado.capacidad() >= cantPasajeros
 	}
 
-	method terceraCondicion(rodado) {
+	method esColorCompatible(rodado) {
 		return !coloresIncompatibles.contains(rodado.color())
 	}
 
 	method satisfacePedido(rodado) {
-		return self.primeraCondicion(rodado) and self.segundaCondicion(rodado) and self.terceraCondicion(rodado)
+		return self.cumpleVelocidadMaxima(rodado) and self.tieneCapacidadSuficiente(rodado) and self.esColorCompatible(rodado)
 	}
 
 	method acelerar() {

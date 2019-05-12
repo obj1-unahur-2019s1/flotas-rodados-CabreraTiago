@@ -15,6 +15,8 @@ describe "test etapa 2" {
 		pedido.distancia(960)
 		pedido.tiempoMaximo(8)
 		pedido.cantPasajeros(4)
+		pedido.coloresIncompatibles().add("azul")
+		pedido.coloresIncompatibles().add("negro")
 	}
 
 	test "cachito puede realizar el pedido" {

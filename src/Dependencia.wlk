@@ -2,6 +2,7 @@ class Dependencia {
 
 	const flota = []
 	var property empleados
+	const pedidos = []
 
 	method agregarAFlota(rodado) {
 		flota.add(rodado)
@@ -33,6 +34,32 @@ class Dependencia {
 
 	method esGrande() {
 		return empleados >= 40 and flota.size() >= 5
+	}
+
+	method agregarPedido(pedido) {
+		pedidos.add(pedido)
+	}
+
+	method quitarPedido(pedido) {
+		pedidos.remove(pedido)
+	}
+
+	method totalPasajerosPedidos() {
+		return pedidos.sum{ pedido => pedido.cantPasajeros() }
+	}
+
+	method pedidosNoSatisfechos() {
+	}
+
+	method colorIncompatibleTotal(color) {
+		return pedidos.all{ pedido => pedido.coloresIncompatibles().contains(color) }
+	}
+
+	method relajarPedidos() {
+		pedidos.forEach{ pedido => pedido.relajar()}
+	}
+
+	method conjuntoColoresIncompatibles() {
 	}
 
 }
